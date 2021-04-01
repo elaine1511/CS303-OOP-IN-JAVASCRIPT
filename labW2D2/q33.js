@@ -36,6 +36,8 @@ function indexedCountWords(string) {
 function removeDuplicates(array) {
     return array.filter((a, b) => array.indexOf(a) === b)
 };
+//can use Set to remove duplicate
+
 
 function longestLength(str) {
     let arr = str.split(" ");
