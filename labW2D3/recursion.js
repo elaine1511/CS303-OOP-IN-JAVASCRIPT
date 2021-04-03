@@ -10,32 +10,55 @@ function sumNum(num) {
         return num + sumNum(num - 1);
     }
 }
-console.log(sumNum(9));
+// console.log(sumNum(9));
 
 /*
 Question 2: - use recursion to implement print() method
 Use Object literal to create an object named linkedlist which has the following methods:
-linkedlist.add(1)
-linkedlist.remove(2) – remove the first one
-linkedlist.print() – format: LinkedList{ 1, 2, 5, 7 }
+let linkedlist = {}; // you need to implement code between the two braces, and make sure you can call methods as below
+linkedlist.add(1);
+linkedlist.add(2);
+linkedlist.add(3);
+linkedlist.print(); //in the console, you should see: LinkedList{1, 2,3}
+linkedlist.remove(2);
+linkedlist.print() //in the console, you should see: LinkedList{1,3}
 */
 let linkedlist = {
-    add: function (list) {
-        return list;
+    head: null,
+    node: function (item) {
+        return {
+            value: item,
+            next: null
+        };
     },
+
+    add: function (item) {
+        let current,
+            newNode = this.node(item);
+        if (this.head === null) {
+            this.head = newNode;
+        }
+        else {
+            current = this.head;
+            while (current.next !== null) {
+                current = current.next;
+            }
+            current.next = newNode;
+        }
+        this.size++;
+    },
+
     remove: function (list) {
 
     },
-    print: function (list) {
-        console.log(list.value);
-        if (list.next) {
-            print(list.next);
-        }
+
+    print: function () {
+
     }
 };
+
 linkedlist.add(1);
 linkedlist.add(2);
-linkedlist.add(5);
-linkedlist.add(7);
+linkedlist.add(3);
 console.log(linkedlist.print());
 
