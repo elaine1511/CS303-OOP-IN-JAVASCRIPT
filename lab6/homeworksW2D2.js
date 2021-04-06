@@ -36,7 +36,7 @@ function Employee(firstName, lastName, birthdate) {
         // let currentYear = new Date().getFullYear();
         // let birthYear = new Date(this.birthdate).getFullYear();
         // return currentYear - birthYear;
-        return new Date().getFullYear() - this.birthdate.getFullName();
+        return new Date().getFullYear() - this.birthdate.getFullYear();
     }
 }
 
