@@ -71,3 +71,23 @@ let averGrade = students.map(item => item.computeAverageGrade())
     .reduce((sum, item, idex, arr) => sum + item / arr.length, 0);
 console.log(averGrade);
 
+/*
+Question 3:
+➢Add a new method named sort() without parameters in built-in constructor function Array.
+It’ll sort all elements in the array in ascending order
+*/
+
+Array.prototype.sort = function () {
+    for (let i = 0; i < this.length - 1; i++) {
+        for (let j = 0; j < this.length - i - 1; j++) {
+            if (this[j] > this[j + 1]) {
+                let temp = this[j];
+                this[j] = this[j + 1];
+                this[j + 1] = temp;
+            };
+        };
+    };
+    console.log(this);
+};
+[11, 4, 6, 3, 10].sort();
+
